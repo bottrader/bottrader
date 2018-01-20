@@ -3,17 +3,47 @@
   "version": "0.0.1",
   "description": "Automated generic trading system",
   "main": "server/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bottrader/bottrader.git"
-  },
+  "homepage": "https://github.com/bottrader/bottrader#readme",
   "author": "Michael Sutherland",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/bottrader/bottrader/issues"
   },
-  "homepage": "https://github.com/bottrader/bottrader#readme"
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha",
+    "postinstall": "webpack -p",
+    "start": "node server/index.js",
+    "start:dev": "nodemon server/index.js",
+    "start:debug": "nodemon --inspect server/index.js",
+    "react:dev": "webpack -d -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bottrader/bottrader.git"
+  },
+  "dependencies": {
+    "autobahn": "^17.5.2",
+    "axios": "^0.17.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.18.2",
+    "css-loader": "^0.28.8",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "socket.io": "^2.0.4",
+    "style-loader": "^0.19.1",
+    "underscore": "^1.8.3",
+    "webpack": "^3.10.0",
+    "ws": "^3.3.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "javascript-state-machine": "^3.0.1",
+    "mocha": "^4.0.1",
+    "talib": "^1.0.3"
+  },
 }
