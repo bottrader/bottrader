@@ -1,0 +1,12 @@
+#Build Output Files
+node_modules/
+
+#System Files
+.DS_Store
+
+
+#Editor Files
+.vscode/
+
+
+
