@@ -1,0 +1,19 @@
+{
+  "name": "bottrader",
+  "version": "0.0.1",
+  "description": "Automated generic trading system",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bottrader/bottrader.git"
+  },
+  "author": "Michael Sutherland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bottrader/bottrader/issues"
+  },
+  "homepage": "https://github.com/bottrader/bottrader#readme"
+}
