@@ -1,32 +1,29 @@
+const webpack = require('webpack')
 const path = require('path');
-const dest = path.resolve(__dirname, 'client/dist');
-const src = path.resolve(__dirname, 'client/src');
 
 module.exports = {
-  entry: `${src}/index.jsx`,
+  devtool: 'cheap-module-eval-source-map',
+  entry: [
+    'webpack-hot-middleware/client',
+    './client/src/index.js'
+  ],
   output: {
     filename: 'bundle.js',
-    path: dest
+    path: path.join(__dirname, 'client/dist'),
+    publicPath: '/static/'
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
   module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          { loader: "style-loader" },
-          { loader: "css-loader" }
-        ]
-      },
-      {
-        test: /\.jsx$/,
-        include: src,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env', 'react']
-          }
-        }
-      }
-    ] 
+    loaders: [{
+      test: /\.css$/,
+      loaders: ['style-loader', 'css-loader']
+    },
+    {
+      test: /\.jsx?$/,
+      loaders: ['react-hot', 'babel'],
+      include: path.join(__dirname, 'client/src')
+    }]
   }
 };
