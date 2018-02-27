@@ -5,12 +5,12 @@ import ActivityFeed from './ActivityFeed.jsx';
 
 const feed = [
   {
-    name: 'Trader: Cherry',
+    name: 'Trader: Bot 1',
     description: 'Feed Item 1 description',
     timestamp: moment(Date.now()).fromNow()
   },
   {
-    name: 'Trader: Evan',
+    name: 'Trader: Bot 2',
     description: 'Feed Item 2 description',
     timestamp: moment(Date.now()).fromNow()
   },
