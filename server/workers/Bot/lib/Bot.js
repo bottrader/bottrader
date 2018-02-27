@@ -266,11 +266,11 @@ class Bot {
   }
 }
 
-onServerMessage(message) {
+function onServerMessage(message) {
   console.log('Message received from Server: ', message);
 }
 
-onDisconnect() {
+function onDisconnect() {
   console.log('Disconnect received from Server');
 }
 
