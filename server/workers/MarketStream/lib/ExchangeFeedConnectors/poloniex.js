@@ -1,28 +1,32 @@
 var autobahn = require('autobahn');
-var wsuri = "wss://api.poloniex.com";
+var wsuri = 'wss://api.poloniex.com';
 var connection = new autobahn.Connection({
   url: wsuri,
-  realm: "realm1"
+  realm: 'realm1'
 });
 
 connection.onopen = function (session) {
-  function marketEvent(args, kwargs) {
+  
+  let marketEvent = function(args) {
     console.log(args);
-  }
-  function tickerEvent(args, kwargs) {
+  };
+
+  let tickerEvent = function(args) {
     console.log(args);
-  }
-  function trollboxEvent(args, kwargs) {
+  };
+  
+  let trollboxEvent = function(args) {
     console.log(args);
-  }
+  };
+
   session.subscribe('BTC_XMR', marketEvent);
   session.subscribe('ticker', tickerEvent);
   session.subscribe('trollbox', trollboxEvent);
-}
+};
 
 connection.onclose = function () {
-  console.log("Websocket connection closed");
-}
+  console.log('Websocket connection closed');
+};
 
 connection.open();
 
