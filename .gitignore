@@ -1,3 +1,6 @@
+#Keys
+*.pem
+
 #Build Output Files
 node_modules/
 
