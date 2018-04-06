@@ -1,29 +1,26 @@
-const webpack = require('webpack')
+//const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
-  entry: [
-    'webpack-hot-middleware/client',
-    './client/src/index.js'
-  ],
+  entry: './src/client/index.tsx',
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname, 'client/dist'),
-    publicPath: '/static/'
+    path: path.join(__dirname, '/dist')
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
+
+  devtool: 'source-map',
+
+
   module: {
-    loaders: [{
-      test: /\.css$/,
-      loaders: ['style-loader', 'css-loader']
-    },
-    {
-      test: /\.jsx?$/,
-      loaders: ['react-hot', 'babel'],
-      include: path.join(__dirname, 'client/src')
-    }]
-  }
+    rules: [
+      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
+      { test: /\.css$/, loaders: ['style-loader', 'css-loader'] },
+      { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' }
+    ]
+  },
+
+  externals: {
+    'react': 'React',
+    'react-dom': 'ReactDOM'
+  },
 };

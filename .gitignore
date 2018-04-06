@@ -1,15 +1,31 @@
-#Keys
+# Keys
 *.pem
+.env
 
-#Build Output Files
+# Build Output Files
 node_modules/
+marketdata*
+build/
+dist/
+sandbox/
 
-#System Files
+# Strategies
+src/server/Bot/Strategies
+test/strategies
+
+# Log Files
+logs/
+errorlogs/
+*.log
+
+# System Files
 .DS_Store
 
 
-#Editor Files
+# Editor Files
 .vscode/
+
+
 
 
 

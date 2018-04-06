@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "outDir": "build",
+    "declaration": true,
+    "strictNullChecks": false,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "jsx": "react",
+    "target": "es6",
+    "module": "commonjs",
+    "sourceMap": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ]
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./test/**/*.ts",
+    "./sandbox/**/*.ts"
+  ],
+  "exclude": [
+    "./node_modules",
+  ]
+}
